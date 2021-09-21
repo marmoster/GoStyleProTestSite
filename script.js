@@ -7,6 +7,7 @@ let phoneButton = document.querySelector(".button-call")
 let smsButton = document.querySelector(".button-sms")
 let locationButoon = document.querySelector(".button-location")
 let emailButton = document.querySelector(".button-email")
+let contactButton = document.querySelector(".button-contact")
 
 function openCamera() {
     window.webkit.messageHandlers.openCamera.postMessage("cameraButton click");
@@ -40,6 +41,10 @@ function openEmail() {
     window.webkit.messageHandlers.openEmail.postMessage("openEmail click");
 }
 
+function importContact() {
+    window.webkit.messageHandlers.importContact.postMessage("importContact click");
+}
+
 cameraButton.addEventListener("click", openCamera)
 
 galleryButton.addEventListener("click", openGallery)
@@ -55,3 +60,5 @@ smsButton.addEventListener("click", openSMS)
 locationButoon.addEventListener("click", determineLocation)
 
 emailButton.addEventListener("click", openEmail)
+
+contactButton.addEventListener("click", importContact)
